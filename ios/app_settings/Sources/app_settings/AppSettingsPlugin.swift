@@ -10,7 +10,7 @@ public class AppSettingsPlugin: NSObject, @preconcurrency FlutterPlugin, UIWindo
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
     
-    public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    nonisolated public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch(call.method) {
         case "openSettings":
             handleOpenSettings(call: call, result: result)
