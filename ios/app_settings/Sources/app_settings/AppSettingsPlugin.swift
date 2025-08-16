@@ -4,7 +4,7 @@ import StoreKit
 
 @MainActor
 public class AppSettingsPlugin: NSObject, @preconcurrency FlutterPlugin, UIWindowSceneDelegate {
-    public static func register(with registrar: FlutterPluginRegistrar) {
+    nonisolated public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "com.spencerccf.app_settings/methods", binaryMessenger: registrar.messenger())
         let instance = AppSettingsPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
